@@ -2,8 +2,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.table.TableRowSorter;
 import javax.swing.RowFilter;
@@ -52,9 +50,12 @@ public class Cart extends JFrame {
         proceedToCheckoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
-                dispose();
-                new Last();
+                if (Final.isCartEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Your cart is empty! Add some products first.");
+                } else {
+                    dispose();
+                    new Last();
+                }
             }
         });
         removeProductButton.addActionListener(new ActionListener() {
@@ -87,7 +88,7 @@ public class Cart extends JFrame {
         DefaultTableModel model = new DefaultTableModel(columnNames, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                return column == 1; // Only Quantity editable
+                return column == 1;
             }
         };
 
@@ -98,12 +99,11 @@ public class Cart extends JFrame {
 
         table1.setModel(model);
 
-        // 👇 ADD THIS
         model.addTableModelListener(e -> {
             if (e.getType() == javax.swing.event.TableModelEvent.UPDATE) {
                 int row = e.getFirstRow();
                 int column = e.getColumn();
-                if (column == 1) { // If Quantity was edited
+                if (column == 1) {
                     updateQuantityInDatabase(row);
                 }
             }
@@ -114,15 +114,12 @@ public class Cart extends JFrame {
         String productName = (String) model.getValueAt(row, 0);
         int newQuantity = Integer.parseInt(model.getValueAt(row, 1).toString());
 
-        // Update database
         Final.updateCartItemQuantity(productName, newQuantity);
 
-        // Update total price for that row
         double pricePerItem = Final.getPriceForProduct(productName);
         double newTotalPrice = pricePerItem * newQuantity;
         model.setValueAt(newTotalPrice, row, 2);
 
-        // 👇 Now paste here to update total cart price
         double total = 0.0;
         for (int i = 0; i < model.getRowCount(); i++) {
             total += Double.parseDouble(model.getValueAt(i, 2).toString());
@@ -132,18 +129,14 @@ public class Cart extends JFrame {
     private void applyFilter() {
         String selected = (String) comboBox1.getSelectedItem();
         DefaultTableModel model = (DefaultTableModel) table1.getModel();
-
         ArrayList<Object[]> rows = new ArrayList<>();
 
-        // Get all rows into ArrayList first
         for (int i = 0; i < model.getRowCount(); i++) {
             String name = (String) model.getValueAt(i, 0);
             int quantity = Integer.parseInt(model.getValueAt(i, 1).toString());
             double totalPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
             rows.add(new Object[]{name, quantity, totalPrice});
         }
-
-        // Sort rows depending on selection
         rows.sort((o1, o2) -> {
             if (selected.equals("Price High to Low")) {
                 return Double.compare((double) o2[2], (double) o1[2]); // Total price
@@ -157,13 +150,13 @@ public class Cart extends JFrame {
             return 0;
         });
 
-        // Remove all rows and re-add them in sorted order
-        model.setRowCount(0); // Clear table
+        model.setRowCount(0);
 
         for (Object[] row : rows) {
             model.addRow(row);
         }
     }
+
     private void searchFilter() {
         String searchText = textField1.getText().toLowerCase();
         DefaultTableModel model = (DefaultTableModel) table1.getModel();
@@ -173,11 +166,7 @@ public class Cart extends JFrame {
         if (searchText.trim().length() == 0) {
             sorter.setRowFilter(null);
         } else {
-            sorter.setRowFilter(RowFilter.regexFilter("(?i)" + searchText, 0)); // 0 = Product Name column
+            sorter.setRowFilter(RowFilter.regexFilter("(?i)" + searchText, 0));
         }
     }
-
-
-
-
 }

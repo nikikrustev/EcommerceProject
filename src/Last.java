@@ -30,7 +30,12 @@ public class Last extends JFrame {
         placeOrderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                String address = textField1.getText();
+                String address = textField1.getText().trim();
+
+                if (address.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please enter a shipping address!");
+                    return;
+                }
 
                 // Calculate total price
                 double total = 0.0;
@@ -67,6 +72,7 @@ public class Last extends JFrame {
                 }
             }
         });
+
     }
 
     private void loadCartItems() {

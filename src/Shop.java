@@ -89,9 +89,14 @@ public class Shop extends JFrame {
         goToCartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                dispose(); // close login window
-                new Cart();
+                if (Final.isCartEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Your cart is empty! Add some products first.");
+                } else {
+                    dispose();
+                    new Cart();
+                }
             }
         });
+
     }
 }

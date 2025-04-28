@@ -25,7 +25,7 @@ public class Final {
             if (rs.next()) {
                 String storedHash = rs.getString("password_hash");
                 if (BCrypt.checkpw(password, storedHash)) {
-                    Final.loggedInUserEmail = email;  // 👈 SAVE THE LOGGED-IN EMAIL
+                    Final.loggedInUserEmail = email;
                     return true;
                 } else {
                     return false;
@@ -219,6 +219,22 @@ public class Final {
         }
         return -1;
     }
+    public static boolean isCartEmpty() {
+        String query = "SELECT COUNT(*) AS total FROM cart_items";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(query);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            if (rs.next()) {
+                int total = rs.getInt("total");
+                return total == 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
 }
 
 

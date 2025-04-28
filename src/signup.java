@@ -13,7 +13,7 @@ public class signup extends JFrame {
     public signup() {
         setTitle("Sign Up Page");
         setContentPane(panel1);
-        setSize(400, 350);
+        setSize(600, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -30,6 +30,11 @@ public class signup extends JFrame {
                     return;
                 }
 
+                if (!email.contains("@")) {
+                    JOptionPane.showMessageDialog(null, "Please enter a valid email address (must contain @).");
+                    return;
+                }
+
                 boolean registered = Final.registerUser(username, email, password);
                 if (registered) {
                     JOptionPane.showMessageDialog(null, "Account created successfully!");
@@ -41,11 +46,12 @@ public class signup extends JFrame {
             }
         });
 
+
         clickHereToLogButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                dispose(); // Close signup window
-                new login(); // Open login window
+                dispose();
+                new login();
             }
         });
     }
