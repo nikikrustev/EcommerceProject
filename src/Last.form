@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Last">
-  <grid id="27dc6" layout-manager="GridLayoutManager" row-count="8" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panel1" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="529" height="400"/>
+      <xy x="20" y="20" width="555" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -34,26 +34,9 @@
         </constraints>
         <properties/>
       </component>
-      <component id="70d9d" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Monospaced" size="16" style="1"/>
-          <text value="Email:"/>
-        </properties>
-      </component>
-      <component id="982e9" class="javax.swing.JTextField" binding="textField2" default-binding="true">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
       <component id="66cc6" class="javax.swing.JLabel">
         <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value=""/>
@@ -61,7 +44,7 @@
       </component>
       <component id="43596" class="javax.swing.JLabel">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Monospaced" size="16" style="1"/>
@@ -70,100 +53,40 @@
       </component>
       <component id="8193" class="javax.swing.JTable" binding="table1" default-binding="true">
         <constraints>
-          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
         <properties/>
       </component>
-      <component id="18c54" class="javax.swing.JLabel">
+      <component id="c3c67" class="javax.swing.JLabel" binding="price">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <font name="Noto Sans Mono" size="16" style="1"/>
-          <text value="Financial Details:"/>
-        </properties>
-      </component>
-      <component id="d5e68" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="4" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font size="15"/>
-          <text value="Card number:"/>
-        </properties>
-      </component>
-      <component id="6c015" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="5" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font size="15"/>
-          <text value="CVV:"/>
-        </properties>
-      </component>
-      <component id="124ec" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="6" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font size="15"/>
-          <text value="Expiry Date:"/>
-        </properties>
-      </component>
-      <component id="5c2b1" class="javax.swing.JButton" binding="placeOrderButton" default-binding="true">
-        <constraints>
-          <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-16731384"/>
-          <font size="18" style="1"/>
-          <foreground color="-1"/>
-          <text value="Place order"/>
-        </properties>
-      </component>
-      <component id="fa175" class="javax.swing.JTextField" binding="textField3" default-binding="true">
-        <constraints>
-          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="1f35e" class="javax.swing.JTextField" binding="textField4" default-binding="true">
-        <constraints>
-          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="4a313" class="javax.swing.JTextField" binding="textField5" default-binding="true">
-        <constraints>
-          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="c3c67" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Arial Narrow" size="16" style="2"/>
+          <font name="Arial Narrow" size="20" style="2"/>
           <foreground color="-16731384"/>
           <text value="$$$"/>
         </properties>
       </component>
       <component id="21bef" class="javax.swing.JLabel">
         <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font size="16" style="1"/>
           <text value="Total price:"/>
+        </properties>
+      </component>
+      <component id="5c2b1" class="javax.swing.JButton" binding="placeOrderButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16731384"/>
+          <font size="18" style="1"/>
+          <foreground color="-1"/>
+          <text value="Place order"/>
         </properties>
       </component>
     </children>

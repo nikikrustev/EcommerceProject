@@ -73,7 +73,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="b4f0b" class="javax.swing.JButton" binding="addToCartButton" default-binding="true">
+      <component id="b4f0b" class="javax.swing.JButton" binding="addToCartButton1">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -84,7 +84,7 @@
           <text value="Add to cart"/>
         </properties>
       </component>
-      <component id="6e589" class="javax.swing.JButton" binding="addToCartButton1" default-binding="true">
+      <component id="6e589" class="javax.swing.JButton" binding="addToCartButton2">
         <constraints>
           <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -129,7 +129,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="b06ed" class="javax.swing.JButton" binding="addToCartButton2" default-binding="true">
+      <component id="b06ed" class="javax.swing.JButton" binding="addToCartButton4">
         <constraints>
           <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>

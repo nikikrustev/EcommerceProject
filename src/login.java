@@ -11,7 +11,7 @@ public class login extends JFrame {
     public login() {
         setTitle("Login Page");
         setContentPane(panel1);
-        setSize(400, 300);
+        setSize(400, 330);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -41,8 +41,8 @@ public class login extends JFrame {
         signUpButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                dispose(); // close login window
-                new signup(); // open signup window
+                dispose();
+                new signup();
             }
         });
     }
